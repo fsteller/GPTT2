@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pre-dex-items>
+
+    <item
+        dex="D:\Desarrollo\android-studio\AndroidStudioProjects\GPTT\TestingTool\build\intermediates\pre-dexed\debug\internal_impl-20.0.0-bf57f8c167a9e88d1fa51fa54a768af793dfa875.jar"
+        jar="D:\Desarrollo\android-studio\AndroidStudioProjects\GPTT\TestingTool\build\intermediates\exploded-aar\com.android.support\support-v4\20.0.0\libs\internal_impl-20.0.0.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="e40b3078e3fbd353c9f44da8df25a8fc0078209d"/>
+    <item
+        dex="D:\Desarrollo\android-studio\AndroidStudioProjects\GPTT\TestingTool\build\intermediates\pre-dexed\debug\jsch-0.1.51-6f152ef6d246295a8cbe56f272b35dd68295a593.jar"
+        jar="D:\Desarrollo\android-studio\AndroidStudioProjects\GPTT\TestingTool\libs\jsch-0.1.51.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="21761cb18a9d6e22712d1429a50f255833cd7177"/>
+    <item
+        dex="D:\Desarrollo\android-studio\AndroidStudioProjects\GPTT\TestingTool\build\intermediates\pre-dexed\debug\classes-1042842c50b5f47bad8aa0de1bbff7c85f867265.jar"
+        jar="D:\Desarrollo\android-studio\AndroidStudioProjects\GPTT\TestingTool\build\intermediates\exploded-aar\com.android.support\support-v4\20.0.0\classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="8694693636ab36910c8100ce527c258ff3ebece0"/>
+    <item
+        dex="D:\Desarrollo\android-studio\AndroidStudioProjects\GPTT\TestingTool\build\intermediates\pre-dexed\debug\support-annotations-20.0.0-13ba46b527dac7cb6ebd26212050899b613e1ff7.jar"
+        jar="D:\Desarrollo\android-sdk\sdk\extras\android\m2repository\com\android\support\support-annotations\20.0.0\support-annotations-20.0.0.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="9d9013e9ff35fc3756411e62873c363c70c638fa"/>
+
+</pre-dex-items>

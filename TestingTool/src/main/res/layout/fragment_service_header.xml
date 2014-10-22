@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/holo_white"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:layout_width="88dip"
+        android:layout_height="88dip"
+        android:id="@id/header_imageView"
+        android:contentDescription="@string/emptyText"
+        android:scaleType="fitCenter"
+        android:maxHeight="72dip"
+        android:maxWidth="96dip"
+        android:padding="3dip"/>
+
+    <RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_alignParentLeft="true"
+            android:text="@string/emptyText"
+            android:id="@+id/header_descriptionLabel" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/header_descriptionLabel"
+            android:layout_alignBottom="@id/header_spinner"
+            android:gravity="center|left"
+            android:text="@string/emptyText"
+            android:id="@id/header_spinner_titleLabel" />
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/header_descriptionLabel"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:id="@id/header_spinner"
+            android:spinnerMode="dropdown"
+            android:layout_toRightOf="@id/header_spinner_titleLabel" />
+    </RelativeLayout>
+
+</LinearLayout>

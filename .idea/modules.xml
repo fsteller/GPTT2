@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/GPTT.iml" filepath="$PROJECT_DIR$/GPTT.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TestingTool/TestingTool.iml" filepath="$PROJECT_DIR$/TestingTool/TestingTool.iml" />
+    </modules>
+  </component>
+</project>
+

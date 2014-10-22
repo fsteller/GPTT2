@@ -1,0 +1,23 @@
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/action_restoreDefaultValues"
+        android:icon="@android:drawable/ic_menu_revert"
+        android:title="@string/action_restoreDefaultValues"
+        android:showAsAction="ifRoom" />
+
+    <item android:id="@+id/action_service"
+        android:icon="@android:drawable/ic_media_play"
+        android:title="@string/action_startService"
+        android:showAsAction="ifRoom|withText" />
+
+    <item android:id="@+id/action_settings"
+        android:icon="@android:drawable/ic_menu_preferences"
+        android:title="@string/action_settings"
+        android:showAsAction="withText" />
+
+    <item android:id="@+id/action_websearch"
+        android:icon="@drawable/action_search"
+        android:title="@string/action_websearch"
+        android:showAsAction="never|withText" />
+</menu>

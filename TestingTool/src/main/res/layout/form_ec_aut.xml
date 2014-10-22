@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/holo_card_white"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="2dip">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/userNameLabel"
+        android:id="@id/userName_label"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@id/password_label"
+        android:text="@string/passwordLabel"
+        android:maxLength="20"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_below="@id/userName_label"
+        android:layout_alignParentLeft="true"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:id="@id/userName_editText"
+        android:inputType="textPersonName|text"
+        android:layout_toLeftOf="@id/password_label"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textNoSuggestions|textPassword"
+        android:maxLength="20"
+        android:id="@id/password_editText"
+        android:layout_below="@id/password_label"
+        android:layout_toRightOf="@id/userName_editText"
+        android:layout_alignParentRight="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/keyIdLabel"
+        android:id="@id/keyId_label"
+        android:layout_below="@id/userName_editText"
+        android:layout_alignParentLeft="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/keyLabel"
+        android:id="@id/key_label"
+        android:layout_below="@id/password_editText"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number|textNoSuggestions"
+        android:maxLength="12"
+        android:id="@id/keyId_editText"
+        android:layout_below="@id/keyId_label"
+        android:layout_alignParentLeft="true"
+        android:layout_toLeftOf="@id/key_label" />
+
+    <EditText
+        android:layout_toRightOf="@id/keyId_editText"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/key_label"
+        android:inputType="textNoSuggestions|textPassword"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:id="@id/key_editText"
+        android:maxLength="32" />
+
+</RelativeLayout>

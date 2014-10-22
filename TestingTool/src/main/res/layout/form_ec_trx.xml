@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/holo_card_white"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="2dip">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/processor_label"
+        android:id="@+id/processor_label"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/ccNumber_label"
+        android:id="@+id/ccNumber_label"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:maxLength="25"
+        android:id="@+id/processor_editText"
+        android:layout_below="@+id/processor_label"
+        android:layout_alignParentLeft="true"
+        android:layout_toLeftOf="@+id/ccNumber_editText" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:maxLength="16"
+        android:id="@+id/ccNumber_editText"
+        android:layout_alignTop="@+id/processor_editText"
+        android:layout_alignParentRight="true"
+        android:layout_alignLeft="@+id/ccNumber_label" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/amount_label"
+        android:id="@+id/amount_label"
+        android:layout_below="@+id/processor_editText"
+        android:layout_alignLeft="@+id/processor_editText" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/cvv_label"
+        android:id="@+id/cvv_label"
+        android:layout_below="@+id/ccNumber_editText"
+        android:layout_alignLeft="@+id/ccNumber_editText" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/expDate_label"
+        android:id="@+id/expDate_label"
+        android:layout_above="@+id/cvv_editText"
+        android:layout_toRightOf="@+id/ccNumber_label"
+        android:layout_marginLeft="11dp" />
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:maxLength="5"
+        android:id="@id/amount_editText"
+        android:layout_below="@id/amount_label"
+        android:layout_alignRight="@id/processor_editText"
+        android:layout_alignParentLeft="true"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:maxLength="3"
+        android:id="@id/cvv_editText"
+        android:layout_alignTop="@id/amount_editText"
+        android:layout_alignLeft="@id/cvv_label"
+        android:layout_toLeftOf="@id/expDate_label" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:maxLength="4"
+        android:id="@id/expiration_editText"
+        android:layout_below="@id/expDate_label"
+        android:layout_alignRight="@id/ccNumber_editText"
+        android:layout_alignLeft="@id/expDate_label" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/orderIdLabel"
+        android:id="@id/orderId_label"
+        android:layout_below="@id/amount_editText"
+        android:layout_alignLeft="@id/amount_editText" />
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@id/orderId_editText"
+        android:maxLength="20"
+        android:layout_below="@id/orderId_label"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:inputType="text" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/transactionIdLabel"
+        android:id="@id/trxId_label"
+        android:layout_below="@id/amount_editText" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@id/trxId_editText"
+        android:layout_below="@id/trxId_label"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true" />
+
+</RelativeLayout>

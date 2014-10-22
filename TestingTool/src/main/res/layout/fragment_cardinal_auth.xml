@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@android:color/transparent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/bottomPanel"
+        android:fadeScrollbars="false">
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:background="@android:color/transparent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dip">
+
+            <RelativeLayout
+                android:background="@drawable/holo_card_white"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentLeft="true"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_width="fill_parent"
+                android:padding="10dip"
+                android:id="@+id/lola">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/directPosLabel"
+                    android:id="@+id/directPos_rb"
+                    android:checked="true" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/braowserRedirectLabel"
+                    android:id="@+id/browserRedirect_rb"
+                    android:layout_alignTop="@+id/directPos_rb"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="14dp" />
+            </RelativeLayout>
+
+            <include
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                layout="@layout/form_ec_aut"
+                android:layout_marginTop="2dip"
+                android:id="@+id/include"
+                android:layout_below="@+id/lola"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentLeft="true" />
+
+            <include
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                layout="@layout/form_ec_trx"
+                android:layout_below="@+id/include"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="2dip"
+                android:id="@+id/include2" />
+
+            <include
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                layout="@layout/form_ec_address"
+                android:layout_below="@+id/include2"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="2dip"
+                android:id="@+id/include3" />
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/bottomPanel"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/holo_card_red"
+        android:padding="10dip"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true">
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:id="@+id/send_button"
+            android:text="@string/sendLabel" />
+    </RelativeLayout>
+
+</RelativeLayout>

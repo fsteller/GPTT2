@@ -1,0 +1,538 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">GPTT</string>
+    <string name="allPattern">*</string>
+    <string name="trxResponsePattern">/trx_transaction</string>
+
+    <string-array name="services">
+        <item>Cardinal</item>
+        <item>Paycom</item>
+    </string-array>
+    <string-array name="cardinal_opts">
+        <item>Auth</item>
+        <item>Capture</item>
+        <item>Sale</item>
+        <item>Void</item>
+    </string-array>
+    <string-array name="paycom_opts">
+        <item>Auth</item>
+        <item>Sale</item>
+        <item>Void</item>
+    </string-array>
+    <string-array name="ppp_opts">
+        <item>SFTP</item>
+        <item>FTPS</item>
+    </string-array>
+
+    <string-array name="countries">
+        <item>US</item>
+        <item>PA</item>
+        <item>CR</item>
+        <item>NI</item>
+        <item>HN</item>
+        <item>SV</item>
+        <item>GT</item>
+    </string-array>
+    <string-array name="us_states">
+        <item>AL</item>
+        <item>AK</item>
+        <item>AZ</item>
+        <item>AR</item>
+        <item>CA</item>
+        <item>CO</item>
+        <item>CT</item>
+        <item>DE</item>
+        <item>DC</item>
+        <item>FL</item>
+        <item>GA</item>
+        <item>HA</item>
+        <item>ID</item>
+        <item>IL</item>
+        <item>IN</item>
+        <item>IA</item>
+        <item>KA</item>
+        <item>KY</item>
+        <item>LA</item>
+        <item>ME</item>
+        <item>MD</item>
+        <item>MA</item>
+        <item>MI</item>
+        <item>MN</item>
+        <item>MS</item>
+        <item>MO</item>
+        <item>MT</item>
+        <item>NE</item>
+        <item>NV</item>
+        <item>NH</item>
+        <item>NJ</item>
+        <item>NM</item>
+        <item>NY</item>
+        <item>NC</item>
+        <item>ND</item>
+        <item>OH</item>
+        <item>OK</item>
+        <item>OR</item>
+        <item>PA</item>
+        <item>RI</item>
+        <item>SC</item>
+        <item>SD</item>
+        <item>TN</item>
+        <item>TX</item>
+        <item>UT</item>
+        <item>VT</item>
+        <item>VA</item>
+        <item>WA</item>
+        <item>WV</item>
+        <item>WI</item>
+        <item>WY</item>
+    </string-array>
+    <string-array name="cr_states">
+        <item>San Jose</item>
+        <item>Alajuela</item>
+        <item>Heredia</item>
+        <item>Cartago</item>
+        <item>Puntarenas</item>
+        <item>Guanacaste</item>
+        <item>Limon</item>
+    </string-array>
+    <string-array name="pa_states">
+        <item>Bocas del Toro</item>
+        <item>Chiriquí</item>
+        <item>Coclé</item>
+        <item>Colón</item>
+        <item>Darién</item>
+        <item>Herrera</item>
+        <item>Los Santos</item>
+        <item>Panamá</item>
+        <item>Veraguas</item>
+    </string-array>
+    <string-array name="ni_states">
+        <item>Atlántico Norte</item>
+        <item>Atlántico Sur</item>
+        <item>Boaco</item>
+        <item>Carazo</item>
+        <item>Chinandega</item>
+        <item>Chontales</item>
+        <item>Estelí</item>
+        <item>Granada</item>
+        <item>Jinotega</item>
+        <item>León</item>
+        <item>Madriz</item>
+        <item>Managua</item>
+        <item>Masaya</item>
+        <item>Matagalpa</item>
+        <item>Nueva Segovia</item>
+        <item>Río San Juan</item>
+        <item>Rivas</item>
+    </string-array>
+    <string-array name="hn_states">
+        <item>Atlántida</item>
+        <item>Choluteca</item>
+        <item>Colón</item>
+        <item>Comayagua</item>
+        <item>Copán</item>
+        <item>Cortés</item>
+        <item>El Paraíso</item>
+        <item>Francisco Morazán</item>
+        <item>Atlántida</item>
+        <item>Gracias a Dios</item>
+        <item>Intibucá</item>
+        <item>Islas de la Bahía</item>
+        <item>La Paz</item>
+        <item>Lempira</item>
+        <item>Ocotepeque</item>
+        <item>Olancho</item>
+        <item>Santa Bárbara</item>
+        <item>Valle</item>
+        <item>Yoro</item>
+    </string-array>
+    <string-array name="gt_states">
+        <item>Alta Verapaz</item>
+        <item>Baja Verapaz</item>
+        <item>Chimaltenango</item>
+        <item>Chiquimula</item>
+        <item>El Progreso</item>
+        <item>Escuintla</item>
+        <item>Guatemala</item>
+        <item>Huehuetenango</item>
+        <item>Tegucigalpa</item>
+        <item>Izabal</item>
+        <item>Jalapa</item>
+        <item>Jutiapa</item>
+        <item>Petén</item>
+        <item>Quetzaltenango</item>
+        <item>Quiché</item>
+        <item>Retalhuleu</item>
+        <item>Sacatepéquez</item>
+        <item>San Marcos</item>
+        <item>Santa Rosa</item>
+        <item>Sololá</item>
+        <item>Suchitepéquez</item>
+        <item>Totonicapán</item>
+        <item>Zacapa</item>
+    </string-array>
+    <string-array name="sv_states">
+        <item>San Salvador</item>
+        <item>La Libertad</item>
+        <item>Santa Ana</item>
+        <item>Sonsonate</item>
+        <item>Usulutan</item>
+        <item>Cuscatlan</item>
+        <item>La Paz</item>
+        <item>Ahuachapan</item>
+        <item>La Union</item>
+        <item>San Vicente</item>
+        <item>San Miguel</item>
+        <item>Morazan</item>
+        <item>Chalatenango</item>
+        <item>Cabanas</item>
+    </string-array>
+
+    <string-array name="san_jose_cities">
+        <item>San Jose</item>
+        <item>Escazu</item>
+        <item>Desamparados</item>
+        <item>Puriscal</item>
+        <item>Tarraz</item>
+        <item>Aserri</item>
+        <item>Mora</item>
+        <item>Goicoechea</item>
+        <item>Santa Ana</item>
+        <item>Alajuelita</item>
+        <item>Vazquez de Coronado</item>
+        <item>Acosta</item>
+        <item>Tibas</item>
+        <item>Moravia</item>
+        <item>Montes de Oca</item>
+        <item>Turrubares</item>
+        <item>Dota</item>
+        <item>Curridabat</item>
+        <item>Perez Zeledon</item>
+        <item>Leon Cortes</item>
+    </string-array>
+    <string-array name="alajuela_cities">
+        <item>Alajuela</item>
+        <item>San Ramon</item>
+        <item>Grecia</item>
+        <item>San Mateo</item>
+        <item>Atenas</item>
+        <item>Naranjo</item>
+        <item>Palmares</item>
+        <item>Poas</item>
+        <item>Orotina</item>
+        <item>San Carlos</item>
+        <item>Zarcero</item>
+        <item>Valverde Vega</item>
+        <item>Upala</item>
+        <item>Los Chiles</item>
+        <item>Guatuso</item>
+    </string-array>
+    <string-array name="heredia_cities">
+        <item>Heredia</item>
+        <item>Barva</item>
+        <item>Santo Domingo</item>
+        <item>Santa Barbara</item>
+        <item>San Rafael</item>
+        <item>San Isidro</item>
+        <item>Belen</item>
+        <item>Flores</item>
+        <item>Parrita</item>
+        <item>Corredores</item>
+        <item>Hojancha</item>
+    </string-array>
+    <string-array name="cartago_cities">
+        <item>Cartago</item>
+        <item>Paraiso</item>
+        <item>La Union</item>
+        <item>Jimenez</item>
+        <item>Turrialba</item>
+        <item>Alvarado</item>
+        <item>Oreamuno</item>
+        <item>El Guarco</item>
+        <item>San Pablo</item>
+        <item>Sarapiqui</item>
+        <item>Garabito</item>
+    </string-array>
+    <string-array name="puntarenas_cities">
+        <item>Puntarenas</item>
+        <item>Esparza</item>
+        <item>Buenos Aires</item>
+        <item>Montes de Oro</item>
+        <item>Osa</item>
+        <item>Aguirre</item>
+        <item>Golfito</item>
+        <item>Coto Brus</item>
+        <item>Nandayure</item>
+        <item>La Cruz</item>
+    </string-array>
+    <string-array name="guanacaste_cities">
+        <item>Liberia</item>
+        <item>Nicoya</item>
+        <item>Santa Cruz</item>
+        <item>Bagaces</item>
+        <item>Carrillo</item>
+        <item>Canhas</item>
+        <item>Abangares</item>
+        <item>Tilaran</item>
+    </string-array>
+    <string-array name="limon_cities">
+        <item>Limon</item>
+        <item>Pococi</item>
+        <item>Siquirres</item>
+        <item>Talamanca</item>
+        <item>Matina</item>
+        <item>Guacimo</item>
+    </string-array>
+    <string-array name="fl_cities">
+        <item>Alachua</item>
+        <item>Altamonte Springs</item>
+        <item>Anna Maria</item>
+        <item>Apalachicola</item>
+        <item>Apopka</item>
+        <item>Atlantic Beach</item>
+        <item>Auburndale</item>
+        <item>Aventura</item>
+        <item>Avon Park</item>
+        <item>Bal Harbour</item>
+        <item>Bartow</item>
+        <item>Bay Harbor Islands</item>
+        <item>Boca Raton</item>
+        <item>Bonita Springs</item>
+        <item>Boynton Beach</item>
+        <item>Bradenton</item>
+        <item>Brooksville</item>
+        <item>Cape Canaveral</item>
+        <item>Cape Coral</item>
+        <item>Casselberry</item>
+        <item>Celebration</item>
+        <item>Chipley</item>
+        <item>Cinco Bayou</item>
+        <item>Clearwater</item>
+        <item>Clewiston</item>
+        <item>Cocoa</item>
+        <item>Cocoa Beach</item>
+        <item>Coconut Creek</item>
+        <item>Coral Gables</item>
+        <item>Coral Springs</item>
+        <item>Crystal River</item>
+        <item>Dania Beach</item>
+        <item>Davie</item>
+        <item>Daytona Beach</item>
+        <item>Deerfield Beach</item>
+        <item>DeFuniak Springs</item>
+        <item>DeLand</item>
+        <item>Delray Beach</item>
+        <item>Deltona</item>
+        <item>Destin</item>
+        <item>Dunedin</item>
+        <item>Eagle Lake</item>
+        <item>Edgewater</item>
+        <item>Edgewood</item>
+        <item>Eustis</item>
+        <item>Fort Lauderdale</item>
+        <item>Fort Meade</item>
+        <item>Fort Myers</item>
+        <item>Fort Myers Beach</item>
+        <item>Fort Pierce</item>
+        <item>Fort Walton Beach</item>
+        <item>Fruitland Park</item>
+        <item>Gainesville</item>
+        <item>Greenacres</item>
+        <item>Green Cove Springs</item>
+        <item>Gulf Breeze</item>
+        <item>Gulfport</item>
+        <item>Haines City</item>
+        <item>Hallandale Beach</item>
+        <item>Hawthorne</item>
+        <item>Hialeah</item>
+        <item>Hialeah Gardens</item>
+        <item>Highland Beach</item>
+        <item>Hollywood</item>
+        <item>Holly Hill</item>
+        <item>Holmes Beach</item>
+        <item>Homestead</item>
+        <item>Hypoluxo</item>
+        <item>Indialantic</item>
+        <item>Jacksonville</item>
+        <item>Juno Beach</item>
+        <item>Jupiter</item>
+        <item>Key Biscayne</item>
+        <item>Key West</item>
+        <item>Kissimmee</item>
+        <item>LaBelle</item>
+        <item>Lady Lake</item>
+        <item>Lake Alfred</item>
+        <item>Lakeland</item>
+        <item>Lake Mary</item>
+        <item>Lake Park</item>
+        <item>Lake Wales</item>
+        <item>Lake Worth</item>
+        <item>Lantana</item>
+        <item>Largo</item>
+        <item>Lauderdale By The Sea</item>
+        <item>Lauderhill</item>
+        <item>Leesburg</item>
+        <item>Lighthouse Point</item>
+        <item>Longboat Key</item>
+        <item>Longwood</item>
+        <item>Maitland</item>
+        <item>Marco Island</item>
+        <item>Margate</item>
+        <item>Melbourne</item>
+        <item>Melbourne Beach</item>
+        <item>Miami</item>
+        <item>Miami Beach</item>
+        <item>Milton</item>
+        <item>Minneola</item>
+        <item>Miramar</item>
+        <item>Mount Dora</item>
+        <item>Naples</item>
+        <item>Neptune Beach</item>
+        <item>New Port Richey</item>
+        <item>New Smyrna Beach</item>
+        <item>Niceville</item>
+        <item>North Miami</item>
+        <item>North Miami Beach</item>
+        <item>North Port</item>
+        <item>Oakland Park</item>
+        <item>Ocala</item>
+        <item>Ocean Ridge</item>
+        <item>Ocoee</item>
+        <item>Okeechobee</item>
+        <item>Oldsmar</item>
+        <item>Orange Park</item>
+        <item>Orlando</item>
+        <item>Ormond Beach</item>
+        <item>Oviedo</item>
+        <item>Palatka</item>
+        <item>Palm Bay</item>
+        <item>Palm Beach</item>
+        <item>Palm Beach Gardens</item>
+        <item>Palm Coast</item>
+        <item>Palmetto</item>
+        <item>Panama City</item>
+        <item>Panama City Beach</item>
+        <item>Pembroke Pines</item>
+        <item>Pensacola</item>
+        <item>Pinecrest</item>
+        <item>Pinellas Park</item>
+        <item>Plant City</item>
+        <item>Plantation</item>
+        <item>Pompano Beach</item>
+        <item>Ponce Inlet</item>
+        <item>Port Orange</item>
+        <item>Port St. Lucie</item>
+        <item>Punta Gorda</item>
+        <item>Rockledge</item>
+        <item>Royal Palm Beach</item>
+        <item>St. Augustine</item>
+        <item>St. Augustine Beach</item>
+        <item>St. Cloud</item>
+        <item>St. Pete Beach</item>
+        <item>St. Petersburg</item>
+        <item>Safety Harbor</item>
+        <item>Sanford</item>
+        <item>Sanibel</item>
+        <item>Sarasota</item>
+        <item>Satellite Beach</item>
+        <item>Seaside</item>
+        <item>Sebastian</item>
+        <item>Sewall Point</item>
+        <item>Shalimar</item>
+        <item>Stuart</item>
+        <item>Surfside</item>
+        <item>Tallahassee</item>
+        <item>Tamarac</item>
+        <item>Tampa</item>
+        <item>Tarpon Springs</item>
+        <item>Tavares</item>
+        <item>Temple Terrace</item>
+        <item>Titusville</item>
+        <item>Treasure Island</item>
+        <item>Valparaiso</item>
+        <item>Venice</item>
+        <item>Vero Beach</item>
+        <item>Wellington</item>
+        <item>West Melbourne</item>
+        <item>West Palm Beach</item>
+        <item>Weston</item>
+        <item>Wilton Manors</item>
+        <item>Winter Garden</item>
+        <item>Winter Haven</item>
+        <item>Winter Park</item>
+        <item>Winter Springs</item>
+    </string-array>
+
+    <string name="drawer_open">Open  navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+    <string name="action_websearch">Search the web</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_restoreDefaultValues">Restore defaults</string>
+    <string name="action_startService">Http Start</string>
+    <string name="action_stopService">Http Stop</string>
+
+    <string name="app_not_available">Sorry, there is no available browsers</string>
+    <string name="invalidParams">Invalid parameters, please check an try again.</string>
+
+    <string name="headerTitle_cardinal">3D Secure</string>
+    <string name="headerDescription_cardinal">Allows user to test service availability and communication capabilities for BrowserRedirect and DirectPOS methods.</string>
+    <string name="headerSpinnerTitle_cardinal">Type</string>
+
+    <string name="headerTitle_paycom">Paycom</string>
+    <string name="headerDescription_paycom">Allows user to test service availability and communication capabilities for DirectPOS method.</string>
+    <string name="headerSpinnerTitle_paycom">Type</string>
+
+    <string name="headerTitle_ppp">PPP H2H</string>
+    <string name="headerDescription_ppp">Permite realizar la carga de una archivo dummy del servicio PPP.</string>
+    <string name="headerSpinnerTitle_ppp">Protocol</string>
+
+    <string name="emptyKeyError">Invalid params</string>
+    <string name="emptyKeyIdError">Invalid params</string>
+    <string name="emptyUsernameError">Invalid params</string>
+    <string name="emptyPasswordError">Invalid params</string>
+    <string name="emptyCcNumbereError">Invalid params</string>
+    <string name="emptyExpDateError">Invalid params</string>
+    <string name="emptyAmountError">Invalid params</string>
+    <string name="emptyTrxIdError">Invalid params</string>
+
+    <string name="noInternetConnection">Sorry there is no internet connection.</string>
+    <string name="browserRedirectTitle">3DSecure Validation</string>
+
+    <string name="notification_started_title">GPTT</string>
+    <string name="notification_started_text">Web server started.</string>
+    <string name="service_started">Service Started</string>
+    <string name="message_ticker_text">New GPTT message</string>
+    <string name="message_title">GPTT Message</string>
+
+    <string name="TrxResponseReceived">Response for transaction with orderId = %s received</string>
+
+    <string name="closeButton">Close</string>
+    <string name="resultDialogTitle">Result</string>
+    <string name="resultDialogText">result dialog text</string>
+    <string name="firstNameLabel">First Name</string>
+    <string name="lastNameLabel">Last Name</string>
+    <string name="AddressLine1Label">Address Line 1</string>
+    <string name="addressLine2Label">Address Line 2</string>
+    <string name="addressStateLabel">State</string>
+    <string name="addressCityLabel">City</string>
+    <string name="addressCountryLabel">Country</string>
+    <string name="addressPostalCode">Postal Code</string>
+    <string name="userNameLabel">User Name</string>
+    <string name="passwordLabel">Password</string>
+    <string name="keyIdLabel">Key Id</string>
+    <string name="keyLabel">key</string>
+    <string name="directPosLabel">Direct POS</string>
+    <string name="braowserRedirectLabel">Browser Redirect</string>
+    <string name="sendLabel">Send</string>
+    <string name="emptyText" />
+    <string name="orderIdLabel">Order Id</string>
+    <string name="transactionIdLabel">Transaction Id</string>
+    <string name="processor_label">Processor</string>
+    <string name="ccNumber_label">CC Number</string>
+    <string name="amount_label">Amount</string>
+    <string name="cvv_label">CVV</string>
+    <string name="expDate_label">Exp Date</string>
+    <string name="sendButtonLabel">Send</string>
+    <string name="notification_responsehandler_msg">Response received</string>
+
+</resources>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.credomatic.grpod.ecommerce.android.gptt.testingtool" >
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:name=".app.AppGPTT"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+
+        <service android:name=".services.HTTPService" />
+
+        <activity
+            android:name=".activityGPTT"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <receiver android:name="com.credomatic.grpod.ecommerce.android.gptt.testingtool.activityGPTT$HttpResponseBroadcastReceiver" >
+            <intent-filter>
+                <action android:name="com.credomatic.gprod.ecommerce.android.browser_redirect" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>

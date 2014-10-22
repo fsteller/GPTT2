@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="stateSpinner" type="id" />
+    <item name="countrySpinner" type="id" />
+    <item name="zipCodeText" type="id" />
+    <item name="citySpinner" type="id" />
+    <item name="lastNameText" type="id" />
+    <item name="firstNameText" type="id" />
+    <item name="addressLine1Text" type="id" />
+    <item name="addressLine2Text" type="id" />
+    <item name="header_spinner_titleLabel" type="id" />
+    <item name="header_titleLabel" type="id" />
+    <item name="header_imageView" type="id" />
+    <item name="header_spinner" type="id" />
+    <item name="keyId_editText" type="id" />
+    <item name="key_label" type="id" />
+    <item name="key_editText" type="id" />
+    <item name="userName_label" type="id" />
+    <item name="password_editText" type="id" />
+    <item name="password_label" type="id" />
+    <item name="userName_editText" type="id" />
+    <item name="keyId_label" type="id" />
+    <item name="expiration_editText" type="id" />
+    <item name="trxId_label" type="id" />
+    <item name="trxId_editText" type="id" />
+    <item name="orderId_label" type="id" />
+    <item name="orderId_editText" type="id" />
+    <item name="amount_editText" type="id" />
+</resources>
