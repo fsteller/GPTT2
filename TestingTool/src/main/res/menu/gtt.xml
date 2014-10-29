@@ -1,15 +1,15 @@
 
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:id="@+id/action_restoreDefaultValues"
+    <!-- item android:id="@+id/action_restoreDefaultValues"
         android:icon="@android:drawable/ic_menu_revert"
         android:title="@string/action_restoreDefaultValues"
-        android:showAsAction="ifRoom" />
+        android:showAsAction="ifRoom" /-->
 
-    <item android:id="@+id/action_service"
+    <!-- item android:id="@+id/action_service"
         android:icon="@android:drawable/ic_media_play"
         android:title="@string/action_startService"
-        android:showAsAction="ifRoom|withText" />
+        android:showAsAction="ifRoom|withText" /-->
 
     <item android:id="@+id/action_settings"
         android:icon="@android:drawable/ic_menu_preferences"

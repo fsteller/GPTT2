@@ -121,14 +121,14 @@ public class activityGPTT extends FragmentActivity implements IActivity {
     @Override
     public boolean onPrepareOptionsMenu(final Menu menu) {
         final boolean drawerOpen = mDrawerLayout.isDrawerOpen(mDrawerList);
-        final boolean isServiceRunning = application.isHttpServiceRunning();
+        //final boolean isServiceRunning = application.isHttpServiceRunning();
 
-        updateHttpServerItem(menu.findItem(R.id.action_service), isServiceRunning);
+        //updateHttpServerItem(menu.findItem(R.id.action_service), isServiceRunning);
 
         // If the nav drawer is open, hide action items related to the content view
-        menu.findItem(R.id.action_service).setVisible(!drawerOpen);
+        //menu.findItem(R.id.action_service).setVisible(!drawerOpen);
         menu.findItem(R.id.action_websearch).setVisible(!drawerOpen);
-        menu.findItem(R.id.action_restoreDefaultValues).setVisible(!drawerOpen);
+        //menu.findItem(R.id.action_restoreDefaultValues).setVisible(!drawerOpen);
 
         return super.onPrepareOptionsMenu(menu);
     }
@@ -156,7 +156,7 @@ public class activityGPTT extends FragmentActivity implements IActivity {
                     Toast.makeText(this, R.string.app_not_available, Toast.LENGTH_LONG).show();
                 }
                 return true;
-            case R.id.action_service:
+            /*case R.id.action_service:
                 httpServiceAction(item);
                 return true;
             case R.id.action_restoreDefaultValues:
@@ -164,7 +164,7 @@ public class activityGPTT extends FragmentActivity implements IActivity {
                     mainFragment.restoreDefaultValues();
                     mainFragment.reloadValues();
                 }
-                return true;
+                return true;*/
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -201,6 +201,8 @@ public class activityGPTT extends FragmentActivity implements IActivity {
         registerReceiver(new HttpResponseBroadcastReceiver(),
                 new IntentFilter(HttpResponseBroadcastReceiver.BrowserRedirectBroadcast));
     }
+
+
 
     //</editor-fold>
     //<editor-fold desc="Private Methods">

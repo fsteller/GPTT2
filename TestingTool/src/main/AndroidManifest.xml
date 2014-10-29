@@ -12,10 +12,11 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
 
-        <service android:name=".services.HTTPService" />
+        <!-- service android:name=".services.HTTPService" / -->
 
         <activity
             android:name=".activityGPTT"
+            android:screenOrientation="portrait"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,11 +24,11 @@
             </intent-filter>
         </activity>
 
-        <receiver android:name="com.credomatic.grpod.ecommerce.android.gptt.testingtool.activityGPTT$HttpResponseBroadcastReceiver" >
+        <!-- receiver android:name="com.credomatic.grpod.ecommerce.android.gptt.testingtool.activityGPTT$HttpResponseBroadcastReceiver" >
             <intent-filter>
                 <action android:name="com.credomatic.gprod.ecommerce.android.browser_redirect" />
             </intent-filter>
-        </receiver>
+        </receiver -->
     </application>
 
 </manifest>

@@ -1,8 +1,9 @@
 package com.credomatic.grpod.ecommerce.android.gptt.testingtool.fragments.ecommerce.cardinal;
 
-import android.app.AlertDialog;
 import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
+import android.net.Uri;
 import android.net.http.SslError;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -12,7 +13,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.webkit.SslErrorHandler;
-import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -26,11 +26,13 @@ import android.widget.Toast;
 
 import com.credomatic.grpod.ecommerce.android.gptt.testingtool.R;
 import com.credomatic.grpod.ecommerce.android.gptt.testingtool.app.AppGPTT;
+import com.credomatic.grpod.ecommerce.android.gptt.testingtool.fragments.ecommerce.ResultDialogFragment;
 import com.credomatic.grpod.ecommerce.android.gptt.testingtool.utilities.net.NetHttp;
 import com.credomatic.grpod.ecommerce.android.gptt.testingtool.utilities.security.Md5;
 
 import org.apache.http.util.EncodingUtils;
 
+import java.net.URLDecoder;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
@@ -92,7 +94,7 @@ public class FragmentCardinalAuth extends BaseFragmentCardinal implements View.O
 
     @Override
     public void onClick(final View v) {
-        AsyncTask<Void, Void, String> task = isBrowserRedirect ? new BrowserRedirect() : new DirectPos();
+        final AsyncTask<Void, Void, String> task = isBrowserRedirect ? new BrowserRedirect() : new DirectPos();
         task.execute();
     }
 
@@ -219,13 +221,6 @@ public class FragmentCardinalAuth extends BaseFragmentCardinal implements View.O
 
             return NetHttp.doPost(params, URL);
         }
-
-        @Override
-        protected void onPostExecute(final String result) {
-            super.onPostExecute(result);
-            Log.i(TAG, "DirectPOS result: " + result);
-            //Toast.makeText(getActivity(), result, Toast.LENGTH_SHORT).show();
-        }
     }
 
     private final class BrowserRedirect extends BaseTrxOperations {
@@ -268,28 +263,12 @@ public class FragmentCardinalAuth extends BaseFragmentCardinal implements View.O
         protected final void onPostExecute(final String params) {
 
             final WebView webView = new WebView(getActivity(), null, android.R.attr.webViewStyle);
-            final AlertDialog.Builder db = new AlertDialog.Builder(getActivity());
+            final Dialog alert = new Dialog(getActivity(), R.style.DialogTheme);
             final WebSettings webSettings = webView.getSettings();
-
-            db.setTitle(getResources().getString(R.string.browserRedirectTitle));
-            db.setCancelable(true);
-            db.setView(webView);
-
-            db.setPositiveButton("Close", new DialogInterface.OnClickListener() {
-                public void onClick(final DialogInterface dialog, final int which) {
-                    dialog.dismiss();
-                }
-            });
-
-            //final Dialog alert = new Dialog(getActivity(), R.style.DialogTheme);
-            //alert.setTitle(getResources().getString(R.string.browserRedirectTitle));
-            //alert.setContentView(webView);
-            //alert.setCancelable(true);
 
             webSettings.setSupportZoom(true);
             webSettings.setJavaScriptEnabled(true);
             webSettings.setBuiltInZoomControls(true);
-
             webView.setWebViewClient(new WebViewClient() {
                 @Override
                 public void onReceivedSslError(final WebView view, final SslErrorHandler handler, final SslError error) {
@@ -298,32 +277,49 @@ public class FragmentCardinalAuth extends BaseFragmentCardinal implements View.O
 
                 @Override
                 public boolean shouldOverrideUrlLoading(final WebView view, final String url) {
-                    view.loadUrl(url);
-                    return true;
+                    final boolean mustFinish = url.startsWith(redirect);
+                    if (mustFinish) {
+                        alert.dismiss();
+                        showResultDialog(getMessage(Uri.parse(url)));
+                    } else
+                        view.loadUrl(url);
+                    return !mustFinish;
                 }
             });
-            webView.setWebChromeClient(new WebChromeClient() {
-                public void onProgressChanged(WebView view, int progress) {
-                    // Activities and WebViews measure progress with different scales.
-                    // The progress meter will automatically disappear when we reach 100%
-                    getActivity().setProgress(progress * 1000);
-                }
-            });
-            webView.setWebViewClient(new WebViewClient() {
-                public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
-                    Toast.makeText(getActivity(), "Oh no! " + description, Toast.LENGTH_SHORT).show();
-                }
-            });
-
             webView.postUrl(URL, EncodingUtils.getBytes(params, "BASE64"));
 
-            final Dialog alert = db.create();
+            alert.setTitle(getResources().getString(R.string.browserRedirectTitle));
+            alert.setOnCancelListener(new DialogInterface.OnCancelListener(){
+                @Override
+                public void onCancel(DialogInterface dialog) {
+                    alert.dismiss();
+                }
+            });
             alert.requestWindowFeature(Window.FEATURE_LEFT_ICON);
             alert.requestWindowFeature(Window.FEATURE_PROGRESS);
-
+            alert.setContentView(webView);
+            alert.setCancelable(true);
             alert.show();
         }
 
+        private String getMessage(final Uri uri) {
+            String result = "";
+            try {
+                result += "Response:" + URLDecoder.decode(uri.getQueryParameter("response"), "UTF-8");
+                result += "\nResponse Text" + URLDecoder.decode(uri.getQueryParameter("responsetext"), "UTF-8");
+                result += "\nResponse Code:" + URLDecoder.decode(uri.getQueryParameter("response_code"), "UTF-8");
+                result += "\nCvv Response:" + URLDecoder.decode(uri.getQueryParameter("cvvresponse"), "UTF-8");
+                result += "\nTransaction Id:" + URLDecoder.decode(uri.getQueryParameter("transactionid"), "UTF-8");
+                result += "\nAuthorization:" + URLDecoder.decode(uri.getQueryParameter("authcode"), "UTF-8");
+                result += "\nOrder Id:" + URLDecoder.decode(uri.getQueryParameter("orderid"), "UTF-8");
+                result += "\nOutBound Hash:" + URLDecoder.decode(uri.getQueryParameter("hash"), "UTF-8");
+                result += "\nTime:" + URLDecoder.decode(uri.getQueryParameter("time"), "UTF-8");
+                result += "\nAmount:" + URLDecoder.decode(uri.getQueryParameter("amount"), "UTF-8");
+            } catch (final Exception e) {
+                Log.e("Error processing response for browser redirect method", e.getMessage(), e);
+            }
+            return result;
+        }
     }
 
     private class RadioButtonSwitcher implements View.OnClickListener {

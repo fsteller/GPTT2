@@ -1,8 +1,10 @@
 package com.credomatic.grpod.ecommerce.android.gptt.testingtool.fragments.ecommerce;
 
+import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -16,6 +18,8 @@ import com.credomatic.grpod.ecommerce.android.gptt.testingtool.app.IFragmentServ
  * Created by fhernandezs on 09/06/2014.
  */
 public abstract class BaseFragmentEcommerce extends Fragment implements IFragmentService {
+
+    private ProgressDialog pd = null;
 
     protected View key_label = null;
     protected View keyId_label = null;
@@ -74,7 +78,7 @@ public abstract class BaseFragmentEcommerce extends Fragment implements IFragmen
     @Override
     public void onResume() {
         super.onResume();
-        ((IActivity) getActivity()).mapNewServiceFragment(this);
+        //((IActivity) getActivity()).mapNewServiceFragment(this);
     }
 
     @Override
@@ -211,32 +215,36 @@ public abstract class BaseFragmentEcommerce extends Fragment implements IFragmen
             cvv = cvv_editText.getText() != null ? cvv_editText.getText().toString().trim() : "";
             trxId = trxId_editText.getText() != null ? trxId_editText.getText().toString().trim() : "";
 
-            firstName = firstName_editText != null && firstName_editText.getText() != null ?
-                    firstName_editText.getText().toString().trim() : "";
-            lastName = lastName_editText != null && lastName_editText.getText() != null ?
-                    lastName_editText.getText().toString().trim() : "";
-            addressLine1 = addressLine1_editText != null && addressLine1_editText.getText() != null ?
-                    addressLine1_editText.getText().toString().trim() : "";
-            addressLine2 = addressLine2_editText != null && addressLine2_editText.getText() != null ?
-                    addressLine2_editText.getText().toString().trim() : "";
-            zip = zip_editText != null && zip_editText.getText() != null ?
-                    zip_editText.getText().toString().trim() : "";
+            firstName = firstName_editText != null && firstName_editText.getText() != null ? firstName_editText.getText().toString().trim() : "";
+            lastName = lastName_editText != null && lastName_editText.getText() != null ? lastName_editText.getText().toString().trim() : "";
+            addressLine1 = addressLine1_editText != null && addressLine1_editText.getText() != null ? addressLine1_editText.getText().toString().trim() : "";
+            addressLine2 = addressLine2_editText != null && addressLine2_editText.getText() != null ? addressLine2_editText.getText().toString().trim() : "";
+            zip = zip_editText != null && zip_editText.getText() != null ? zip_editText.getText().toString().trim() : "";
 
-            country = country_spinner != null && country_spinner.getSelectedView() != null ?
-                    ((TextView) country_spinner.getSelectedView()).getText().toString() : "";
-            state = state_spinner != null && state_spinner.getSelectedView() != null ?
-                    ((TextView) state_spinner.getSelectedView()).getText().toString() : "";
-            city = city_spinner != null && city_spinner.getSelectedView() != null ?
-                    ((TextView) city_spinner.getSelectedView()).getText().toString() : "";
-
+            country = country_spinner != null && country_spinner.getSelectedView() != null ? ((TextView) country_spinner.getSelectedView()).getText().toString() : "";
+            state = state_spinner != null && state_spinner.getSelectedView() != null ? ((TextView) state_spinner.getSelectedView()).getText().toString() : "";
+            city = city_spinner != null && city_spinner.getSelectedView() != null ? ((TextView) city_spinner.getSelectedView()).getText().toString() : "";
         }
 
         protected abstract String validate();
 
         protected abstract String sendTrx();
 
+        protected final void showResultDialog(final String result){
+            if(pd != null && pd.isShowing())
+                pd.dismiss();
+
+            final ResultDialogFragment rDF = new ResultDialogFragment();
+            rDF.setRetainInstance(true);
+            rDF.show(getFragmentManager(), "none");
+            rDF.setResultDialogText(result);
+
+            Log.i(this.getClass().getSimpleName(), "DirectPOS result: " + result);
+        }
+
         @Override
         protected final void onPreExecute() {
+            pd = ProgressDialog.show(getActivity(), "Executing", "Please Wait...");
             loadData();
         }
 
@@ -248,16 +256,12 @@ public abstract class BaseFragmentEcommerce extends Fragment implements IFragmen
 
         @Override
         protected void onPostExecute(final String result) {
-            final ResultDialogFragment rDF = new ResultDialogFragment();
-
-            rDF.setRetainInstance(true);
-            rDF.show(getFragmentManager(), "none");
-            rDF.setResultDialogText(result);
+            showResultDialog(result);
         }
+
     }
 
     protected static boolean isNullOrEmpty(final String s) {
         return s == null || s.isEmpty();
     }
-
 }

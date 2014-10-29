@@ -1,12 +1,12 @@
 apply plugin: 'android'
 
 android {
-    compileSdkVersion 20
-    buildToolsVersion '20.0.0'
+    compileSdkVersion 21
+    buildToolsVersion '21.0.1'
     defaultConfig {
         applicationId 'com.credomatic.grpod.ecommerce.android.gptt.testingtool'
         minSdkVersion 14
-        targetSdkVersion 20
+        targetSdkVersion 21
         versionCode 1
         versionName '1.0'
     }
@@ -14,12 +14,28 @@ android {
         release {
             runProguard true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            debuggable false
+            jniDebugBuild false
+            renderscriptDebugBuild false
+            proguardFile 'D:/Desarrollo/android-studio/AndroidStudioProjects/GPTT/TestingTool/proguard-rules.pro'
+        }
+        debug {
+            debuggable true
+            jniDebugBuild true
+            renderscriptDebugBuild true
+            renderscriptOptimLevel 3
+            runProguard false
+            zipAlign true
         }
     }
     productFlavors {
     }
     dexOptions {
         incremental true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
     }
 }
 
